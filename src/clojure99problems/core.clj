@@ -53,10 +53,12 @@
 )
 
 (defn palindrome? [list]
+  "P06 (*) Is the list a palindrome"
   (= list (reverse-of list))
 )
 
 (defn my-flat [x]
+  "P07 (**) Flat the nested list"
   (reduce
     (fn [acc e]
       (if (list? e)
