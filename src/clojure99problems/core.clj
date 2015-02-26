@@ -55,3 +55,16 @@
 (defn palindrome? [list]
   (= list (reverse-of list))
 )
+
+(defn my-flat [x]
+  (reduce
+    (fn [acc e]
+      (if (list? e)
+        (concat acc (my-flat e))
+        (concat acc (list e))
+      )
+    )
+  '()
+  x
+  )
+)

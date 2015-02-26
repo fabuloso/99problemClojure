@@ -37,3 +37,9 @@
     (is (true? (palindrome? '(a b b a))))
   )
 )
+
+(deftest flat-a-list
+    (testing "Flat a nested list."
+      (is (= '(1 2 3 4 5 6) (my-flat '(1 (2 3) (4 (5 6))))))
+    )
+)
