@@ -70,3 +70,17 @@
   x
   )
 )
+
+(defn compress [x]
+  "P08 (*) Eliminate Consecutive Duplicates of List Elements."
+  (reduce
+    (fn [acc e]
+      (if (not= (last acc ) e)
+        (concat acc (list e))
+        acc
+      )
+    )
+  '()
+  x
+  )
+)

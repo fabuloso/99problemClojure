@@ -43,3 +43,9 @@
       (is (= '(1 2 3 4 5 6) (my-flat '(1 (2 3) (4 (5 6))))))
     )
 )
+
+(deftest compress-a-list
+    (testing "Flat a nested list."
+      (is (= '(1 2 3 4 5 6 2) (compress '(1 2 2 2 3 3 4 5 6 6 6 2))))
+    )
+)
