@@ -84,3 +84,28 @@
   x
   )
 )
+
+(defn sub-pack [xs]
+  (reduce
+    (fn [acc e]
+      (if
+        (or(= (last acc) e)
+          (empty? acc))
+          (concat acc (list e))
+        acc
+      )
+    )
+    '()
+    xs
+  )
+)
+
+(defn pack [x]
+  "P09 Pack consecutive duplicates of list elements into sublists."
+  (loop [acc () sub () xs x]
+    (if (= (last sub)(first xs))
+      (recur acc (conj sub (first xs)) (rest xs))
+      (recur (conj acc sub) '() (rest xs))
+    )
+  )
+)

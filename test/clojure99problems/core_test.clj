@@ -45,7 +45,19 @@
 )
 
 (deftest compress-a-list
-    (testing "Flat a nested list."
+    (testing "Compress a list."
       (is (= '(1 2 3 4 5 6 2) (compress '(1 2 2 2 3 3 4 5 6 6 6 2))))
     )
 )
+
+(deftest sub-pack-test
+  (testing "Sub-pack a list."
+    (is (= '(1 1 1 1) (sub-pack '(1 1 1 1 2 2 3 3 ))))
+  )
+)
+
+;(deftest pack-a-list
+    ;(testing "PAck a list."
+  ;    (is (= '((a a a a)(b)(c c)(a a)(d)(e e e e)) (pack '(a a a a b c c a a d e e e e))))
+;    )
+;)
